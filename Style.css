@@ -44,7 +44,7 @@ body{
     transition: .5s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .07);
 }
-.container .icon .iconBx:hover{
+.container .icon .iconBx.active{
 
  box-shadow: 0 30px 25px rgba(0, 0, 0, .1);
 }
@@ -55,9 +55,32 @@ transition: .5s;
 transform: scale(.8);
 
 }
-.container .icon .iconBx:hover img{
+.container .icon .iconBx.active img{
     filter: grayscale(0);
     transform: scale(1);
 
 
+}
+.content{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+.content .contentBx{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    transform: scale(0);
+}
+.content .contentBx.active{
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+.content .contentBx h2{
+    font-size: 3em;
 }

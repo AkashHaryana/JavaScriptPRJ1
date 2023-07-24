@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ON HOVER DETAILS </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="Javascript" href="main.js">
+   
 </head>
 <body>
     <div class="container">
         <div class="icon">
-            <div class="iconBx">
-            <img src="Images/Adobe.png" width="200px" >
+            <div class="iconBx active" data-id="content1">
+            <img src="Images/Adobe.png" width="200px"  >
             </div>
-            <div class="iconBx">
-            <img src="Images/Herbalife.png" width="200px">
+            <div class="iconBx" data-id="content2">
+            <img src="Images/Herbalife.png" width="200px" >
             </div>
-            <div class="iconBx">
-            <img src="Images/LG.png" width="200px" >
+            <div class="iconBx" data-id="content3">
+            <img src="Images/LG.png" width="200px"  >
             </div>
-            <div class="iconBx">
-            <img src="Images/MobileLegendsBangBang.png" width="200px" >
+            <div class="iconBx" data-id="content4">
+            <img src="Images/MobileLegendsBangBang.png" width="200px"  >
             </div>
         </div>
         <div class="content">
-            <div class="contentBx">
+            <div class="contentBx active" id="content1">
                 <div >
                     <div class="text">
                         <h2>Adobe Text</h2>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contentBx">
+            <div class="contentBx" id="content2">
                 <div >
                     <div class="text">
                         <h2>Herbalife Text</h2>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contentBx">
+            <div class="contentBx" id="content3">
                 <div >
                     <div class="text">
                         <h2>LG Text</h2>
@@ -51,10 +51,10 @@
                     </div>
                 </div>
             </div>
-            <div class="contentBx">
+            <div class="contentBx" id="content4">
                 <div >
                     <div class="text">
-                        <h2>MobileLegendsBangBang Text</h2>
+                        <h2>MobileLegends Text</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestiae incidunt possimus quos dicta quaerat quas labore, obcaecati porro. Ipsam voluptas suscipit minima tenetur illo eius doloremque! Sint dolores libero excepturi voluptatibus nesciunt. Tenetur delectus esse fuga soluta libero saepe pariatur veritatis nihil cupiditate. Quo sapiente expedita tenetur accusantium ipsum qui culpa totam eius sequi. Eius debitis enim libero autem!
                         </p>
                     </div>
@@ -62,7 +62,22 @@
             </div>
         </div>
     </div>
-        
-    
+    <!-- ------------------------ js---------------------------  -->
+    <script>var iconBx = document.querySelectorAll('.iconBx')
+        var contentBx = document.querySelectorAll('.contentBx')
+        for( var i=0; i<iconBx.length;i++){
+            iconBx[i].addEventListener('mouseover', function(){
+                for (var i=0; i<contentBx.length;i++){
+                    contentBx[i].className='contentBx'
+                }
+                document.getElementById(this.dataset.id).className='contentBx active'
+                for (var i=0; i<iconBx.length;i++){
+                    iconBx[i].className='iconBx'
+                    
+                }
+                this.className='iconBx active'
+            })
+            
+        }</script>
 </body>
 </html>
